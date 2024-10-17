@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!--  P.S. I used the notes that i took in class, wrote some from Stack overflow and also looked it up myself -->
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;">
+Your browser does not support the canvas element.
+</canvas>
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+ctx.translate(100, 50); 
+/* this translation is used to define a new origine @Stack Overflow 
+	which is calculated by taking the end point of X and  deviding it by 2 
+	and also the same with y so for x=200 midle is 100 and for y=100 it is 50
+*/
+ctx.beginPath();
+ctx.moveTo(-100, 0); // you get negative numbers by going left on the origin like a numerical system [-100,100]
+ctx.lineTo(100, 0);  
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(0, -50);  
+ctx.lineTo(0, 50);   
+ctx.stroke();
+
+ctx.font = "10px Arial";
+ctx.fillText("X", 85, -5);
+ctx.fillText("Y", -10, -40);  
+
+// for x
+ctx.fillText("-20", -95, 10); 
+ctx.fillText("20", 85, 10);   
+// for y
+ctx.fillText("20", 10, -40);   
+ctx.fillText("-20", 10, 40);   
+
+
+</script>
+
+</body>
+</html>

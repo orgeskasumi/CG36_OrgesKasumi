@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;">
+Your browser does not support the canvas element.
+</canvas>
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+ctx.translate(100, 50); 
+
+ctx.beginPath();
+ctx.moveTo(-100, 0); 
+ctx.lineTo(100, 0);  
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(0, -50);  
+ctx.lineTo(0, 50);   
+ctx.stroke();
+
+ctx.font = "10px Arial";
+ctx.fillText("X", 85, -5);
+ctx.fillText("Y", -10, -40);  
+
+// for x
+ctx.fillText("-20", -95, 10); 
+ctx.fillText("20", 85, 10);   
+// for y
+ctx.fillText("20", 10, -40);   
+ctx.fillText("-20", 10, 40);  
+
+// Drawing point at the end of V1
+ctx.beginPath();
+ctx.arc(15, -10, 3, 0, 2 * Math.PI); // Circle for V1
+ctx.fillStyle = "red";
+ctx.font= "5px Arial"
+ctx.fillText("V1", 3, -10);
+ctx.fill();
+
+// Draw point at the end of V2
+ctx.beginPath();
+ctx.arc(24, -16, 3, 0, 2 * Math.PI); // Circle for V2
+ctx.fillStyle = "blue";
+ctx.font= "5px Arial"
+ctx.fillText("V2", 14, -14);
+ctx.fill();
+
+</script>
+
+</body>
+</html>
